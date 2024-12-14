@@ -1,12 +1,25 @@
 import "./App.css";
-import Agents from "./Agents";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import AuthPage from './pages/AuthPage';
+import PreferencesPage from './pages/PreferencesPage';
+import CalendarPage from './pages/CalendarPage';
+import NotFound from './components/NotFound';
 
-function App() {
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-4">
-            <Agents />
-        </div>
-    );
-}
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/preferences" element={<PreferencesPage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
+

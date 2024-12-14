@@ -1,32 +1,30 @@
-// In your router configuration file (e.g., App.jsx or router.jsx)
+//import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Agents from "./Agents";
-import Agent from "./Agent"; // We'll create this component
-import Layout from "./Layout";
-import Chat from "./Chat";
-import Character from "./Character";
+import LandingPage from "./components/LandingPage";
+import Auth from "./components/Auth";
+import UserPreferences from "./components/UserPreferences";
+import ContentCalendar from "./components/ContentCalendar";
+import NotFound from "./components/NotFound";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Agents />,
+        element: <LandingPage />,
     },
     {
-        path: "/:agentId",
-        element: <Layout />,
-        children: [
-            {
-                path: "", // This matches /:agentId exactly
-                element: <Agent />,
-            },
-            {
-                path: "chat", // This matches /:agentId/chat
-                element: <Chat />,
-            },
-            {
-                path: "character", // This matches /:agentId/chat
-                element: <Character />,
-            },
-        ],
+        path: "/auth",
+        element: <Auth />,
+    },
+    {
+        path: "/preferences",
+        element: <UserPreferences onSavePreferences={(prefs) => console.log(prefs)} />,
+    },
+    {
+        path: "/calendar",
+        element: <ContentCalendar schedule={[]} />, // Replace with actual schedule data
+    },
+    {
+        path: "*", // Catch-all route for undefined paths
+        element: <NotFound />,
     },
 ]);

@@ -1,0 +1,65 @@
+/* Global resets for consistent appearance */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Main container styles */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+/* Header styles */
+.landing-header {
+    margin-bottom: 2rem;
+}
+
+.landing-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.landing-subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #d1d5db;
+}
+
+/* Main content styles */
+.landing-main {
+    margin-top: 2rem;
+}
+
+/* Button styles */
+.landing-button {
+    background-color: #764ba2;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.landing-button:hover {
+    background-color: #667eea;
+    transform: scale(1.05);
+}
+
+.landing-button:active {
+    transform: scale(0.98);
+}
